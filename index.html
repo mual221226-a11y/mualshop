@@ -1,79 +1,184 @@
-    <!-- 3단계: 사회적 증거 섹션 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뮬샵(Mule Shop) | 대전 눈썹문신 전문</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Pretendard:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-beige: #f9f7f2;
+            --point-beige: #e5e0d5;
+            --text-dark: #333333;
+            --text-gray: #777777;
+            --accent: #a68b6a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Pretendard', sans-serif; 
+            background-color: var(--bg-beige); 
+            color: var(--text-dark); 
+            line-height: 1.6;
+            word-break: keep-all;
+        }
+
+        section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
+        h2 { font-family: 'Nanum+Myeongjo', serif; font-size: 2.5rem; margin-bottom: 40px; }
+        p { color: var(--text-gray); margin-bottom: 20px; }
+
+        /* 1. Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(249, 247, 242, 0.7), rgba(249, 247, 242, 0.7)), 
+                        url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80') center/cover;
+            /* 영상 배경 대신 분위기 있는 이미지로 대체, 실제 제작 시 <video> 태그 권장 */
+        }
+        .hero h1 { font-family: 'Nanum+Myeongjo', serif; font-size: 3rem; margin-bottom: 15px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; letter-spacing: 2px; }
+
+        /* Button Style */
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 45px;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .cta-btn:hover { background-color: #8a7356; transform: translateY(-3px); }
+
+        /* 2. Solution Section */
+        .solution { background-color: white; border-radius: 50px 50px 0 0; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .card { padding: 40px; background: var(--bg-beige); border-radius: 20px; transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); }
+        .card h3 { margin-bottom: 15px; color: var(--accent); }
+
+        /* 3. Proof Section (B&A) */
+        .proof .ba-box { 
+            display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; 
+            overflow: hidden; border-radius: 15px;
+        }
+        .ba-box img { width: 45%; border-radius: 10px; }
+        .hygiene { font-size: 0.9rem; font-style: italic; color: var(--accent); margin-top: 20px; }
+
+        /* 4. Process Section */
+        .process-list { text-align: left; max-width: 800px; margin: 0 auto; }
+        .process-item { display: flex; align-items: flex-start; margin-bottom: 30px; }
+        .process-num { font-family: 'Nanum+Myeongjo', serif; font-size: 2rem; color: var(--point-beige); margin-right: 25px; min-width: 40px; }
+
+        /* 5. Info Section */
+        .info { border-top: 1px solid var(--point-beige); }
+        .benefit-tag { display: inline-block; padding: 5px 15px; border: 1px solid var(--accent); color: var(--accent); border-radius: 5px; margin: 5px; font-size: 0.9rem; }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+            .ba-box { flex-direction: column; align-items: center; }
+            .ba-box img { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <p>PREMIUM BROW STUDIO</p>
+        <h1>뮬샵 (Mule Shop)</h1>
+        <p>대전, 본연의 결을 찾아가는 시간</p>
+        <a href="https://pf.kakao.com" class="cta-btn">상담 예약하기</a>
+    </header>
+
+    <section class="solution">
+        <p>DIFFERENCE</p>
+        <h2>안 되는 눈썹은 없습니다</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>미리 예측하는 디자인</h3>
+                <p>아이패드 시뮬레이션으로 시술 후 모습을 미리 확인하여 불안감을 해소합니다.</p>
+            </div>
+            <div class="card">
+                <h3>독보적 색소 배합</h3>
+                <p>피부 타입과 톤을 정밀 분석하여 뮬샵만의 레시피로 최적의 컬러를 찾아냅니다.</p>
+            </div>
+            <div class="card">
+                <h3>본연의 미학</h3>
+                <p>기존 눈썹의 흐름을 해치지 않고 장점만 극대화하는 자연스러운 엠보·콤보 기법.</p>
+            </div>
+        </div>
+    </section>
+
     <section class="proof">
-        <span class="section-label">PORTFOLIO</span>
-        <h2>원하던 눈썹을 만나는 순간</h2>
-        <div class="ba-container">
-            <div class="ba-item">
-                <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&q=80&w=600" alt="남성 눈썹 시술 전후">
-                <div class="ba-label">MENS BROW</div>
-            </div>
-            <div class="ba-item">
-                <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&q=80&w=600" alt="여성 눈썹 시술 전후">
-                <div class="ba-label">WOMENS BROW</div>
-            </div>
+        <p>BEFORE & AFTER</p>
+        <h2>결과로 증명하는 뮬샵</h2>
+        <div class="ba-box">
+            <img src="https://via.placeholder.com/500x300/e5e0d5/ffffff?text=Before" alt="시술 전">
+            <img src="https://via.placeholder.com/500x300/a68b6a/ffffff?text=After" alt="시술 후">
         </div>
-        <p>3040 세련된 감각부터 부모님을 위한 교정 눈썹까지,<br>모든 케이스에 맞춘 정교한 커버업 솔루션을 제안합니다.</p>
-        <div class="hygiene-text">
-            뮬샵은 모든 시술 도구 1회용 사용 및 즉각 폐기 원칙을 준수하며 위생을 최우선으로 합니다.
-        </div>
+        <p>"원하던 눈썹을 만나는 순간, 3040 세련된 감각을 완성합니다."</p>
+        <p class="hygiene">뮬샵은 모든 도구 1회용 사용 및 즉각 폐기 원칙을 준수합니다.</p>
     </section>
 
-    <!-- 4단계: 전문 프로세스 가이드 -->
-    <section class="process">
-        <span class="section-label">PROCESS</span>
+    <section class="process" style="background-color: white;">
+        <p>PROCESS</p>
         <h2>정교한 120분의 집중</h2>
-        <div class="process-wrap">
-            <div class="step">
-                <div class="step-num">01</div>
-                <div class="step-content">
-                    <h3>1:1 딥 컨설팅 및 디자인</h3>
-                    <p>메이크업 습관과 얼굴 골격을 면밀히 분석합니다. 틀에 박힌 디자인이 아닌, 비대칭까지 고려한 최적의 밸런스를 찾습니다.</p>
+        <div class="process-list">
+            <div class="process-item">
+                <div class="process-num">01</div>
+                <div>
+                    <strong>딥 컨설팅 & 조화로운 디자인</strong>
+                    <p>메이크업 습관과 골격을 분석하여 1:1 맞춤 드로잉을 진행합니다. 인위적 대칭보다 조화를 추구합니다.</p>
                 </div>
             </div>
-            <div class="step">
-                <div class="step-num">02</div>
-                <div class="step-content">
-                    <h3>정성을 다한 맞춤 시술</h3>
-                    <p>개인별 피부 타입과 통증 민감도에 맞춰 엠보·콤보 등 최적의 기법으로 2시간 동안 여유 있게 시술을 진행합니다.</p>
+            <div class="process-item">
+                <div class="process-num">02</div>
+                <div>
+                    <strong>정성을 다한 맞춤 시술</strong>
+                    <p>개인별 피부 타입을 고려하여 2시간 동안 여유 있고 정교하게 시술합니다.</p>
                 </div>
             </div>
-            <div class="step">
-                <div class="step-num">03</div>
-                <div class="step-content">
-                    <h3>애프터 케어 시스템</h3>
-                    <p>전용 재생 크림 증정과 함께 카카오톡을 통해 사후 관리법을 상세히 안내드려 유지력을 높여드립니다.</p>
+            <div class="process-item">
+                <div class="process-num">03</div>
+                <div>
+                    <strong>애프터 케어 가이드</strong>
+                    <p>재생 크림 증정과 함께 카카오톡으로 상세 주의사항을 안내해 드립니다.</p>
                 </div>
             </div>
-            <div class="step">
-                <div class="step-num">04</div>
-                <div class="step-content">
-                    <h3>책임 리터치 제도</h3>
-                    <p>시술 4주 후부터 8주 이내, 필요 시 무상 1회 리터치를 통해 완성도 높은 결과물을 끝까지 책임집니다.</p>
+            <div class="process-item">
+                <div class="process-num">04</div>
+                <div>
+                    <strong>책임 리터치</strong>
+                    <p>4~8주 이내, 필요하신 경우 무상 1회 리터치를 통해 완성도를 높입니다.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5단계: 전환 유도 섹션 -->
-    <section class="contact">
-        <span class="section-label">RESERVATION</span>
-        <h2>한 분만을 위한 정성스러운 예약</h2>
+    <section class="info">
+        <h2>CONTACT</h2>
+        <p><strong>위치:</strong> 대전 남선공원 인근 (예약 시 상세 위치 안내)</p>
+        <p><strong>영업시간:</strong> 오전 11시 ~ 오후 6시 (문의는 24시간)</p>
+        <p><strong>주차:</strong> 인근 유료 주차장 이용 가능 (위치 및 요금 별도 안내)</p>
         
-        <div class="benefit-box">
-            <div class="benefit-item">👫 동반 예약 시 <strong>각 1만원 할인</strong></div>
-            <div class="benefit-item">✨ 세트 시술 시 <strong>5천원 할인</strong></div>
+        <div style="margin: 30px 0;">
+            <span class="benefit-tag">동반 예약 시 각 1만원 할인</span>
+            <span class="benefit-tag">세트 시술 시 5천원 할인</span>
         </div>
 
-        <div class="info-list">
-            <div class="info-row"><span>위치</span><span>대전 남선공원 인근 (상세안내)</span></div>
-            <div class="info-row"><span>주차</span><span>인근 유료주차장 안내 지원</span></div>
-            <div class="info-row"><span>운영시간</span><span>11:00 - 18:00</span></div>
-            <div class="info-row"><span>상담</span><span>24시간 카카오톡 문의 가능</span></div>
-        </div>
-
-        <p style="margin-bottom: 40px; font-weight: 500;">
-            "오직 한 분만을 위한 프라이빗한 공간에서<br>최선을 다한 맞춤 시술로 보답하겠습니다."
-        </p>
-        
-        <a href="https://pf.kakao.com" class="cta-btn">카카오톡 문의하기</a>
+        <p style="margin-top: 40px; font-weight: bold;">"한 분 한 분께 맞는 정성스러운 시술로 보답하겠습니다."</p>
+        <a href="https://pf.kakao.com" class="cta-btn" style="margin-top: 20px;">카카오톡으로 예약 문의하기</a>
     </section>
+
+    <footer style="padding: 40px; font-size: 0.8rem; color: #999;">
+        © 2026 MULE SHOP. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
