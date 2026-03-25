@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>뮬샵(Mule Shop) | 대전 눈썹문신 전문</title>
+    <title>뮬샵(Mule Shop) | 대전 프리미엄 브로우 스튜디오</title>
+    <!-- 폰트 설정: 나눔명조(타이틀), 프리텐다드(본문) -->
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Pretendard:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -12,6 +13,7 @@
             --text-dark: #333333;
             --text-gray: #777777;
             --accent: #a68b6a;
+            --white: #ffffff;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -19,13 +21,23 @@
             font-family: 'Pretendard', sans-serif; 
             background-color: var(--bg-beige); 
             color: var(--text-dark); 
-            line-height: 1.6;
+            line-height: 1.7;
             word-break: keep-all;
         }
 
-        section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
-        h2 { font-family: 'Nanum+Myeongjo', serif; font-size: 2.5rem; margin-bottom: 40px; }
-        p { color: var(--text-gray); margin-bottom: 20px; }
+        header, section, footer { padding: 100px 24px; max-width: 1000px; margin: 0 auto; text-align: center; }
+        
+        .section-label { 
+            display: block; 
+            font-size: 0.85rem; 
+            letter-spacing: 3px; 
+            color: var(--accent); 
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        h1, h2, h3 { font-family: 'Nanum+Myeongjo', serif; font-weight: 700; }
+        h2 { font-size: 2.2rem; margin-bottom: 40px; }
 
         /* 1. Hero Section */
         .hero {
@@ -34,150 +46,203 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(rgba(249, 247, 242, 0.7), rgba(249, 247, 242, 0.7)), 
+            padding: 0;
+            background: linear-gradient(rgba(249, 247, 242, 0.6), rgba(249, 247, 242, 0.6)), 
                         url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80') center/cover;
-            /* 영상 배경 대신 분위기 있는 이미지로 대체, 실제 제작 시 <video> 태그 권장 */
+            position: relative;
         }
-        .hero h1 { font-family: 'Nanum+Myeongjo', serif; font-size: 3rem; margin-bottom: 15px; }
-        .hero p { font-size: 1.2rem; margin-bottom: 30px; letter-spacing: 2px; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; letter-spacing: -1px; }
+        .hero p { font-size: 1.2rem; color: var(--text-dark); margin-bottom: 40px; letter-spacing: 2px; }
 
-        /* Button Style */
         .cta-btn {
             display: inline-block;
-            padding: 18px 45px;
+            padding: 20px 55px;
             background-color: var(--accent);
-            color: white;
+            color: var(--white);
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            transition: 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(166, 139, 106, 0.2);
         }
-        .cta-btn:hover { background-color: #8a7356; transform: translateY(-3px); }
+        .cta-btn:hover { background-color: #8d7558; transform: translateY(-3px); }
 
         /* 2. Solution Section */
-        .solution { background-color: white; border-radius: 50px 50px 0 0; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-        .card { padding: 40px; background: var(--bg-beige); border-radius: 20px; transition: 0.3s; }
+        .solution { background-color: var(--white); max-width: 100%; border-radius: 60px 60px 0 0; margin-top: -60px; position: relative; z-index: 3; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; max-width: 1000px; margin: 50px auto 0; }
+        .card { text-align: left; padding: 40px; background: var(--bg-beige); border-radius: 20px; transition: 0.3s; }
         .card:hover { transform: translateY(-10px); }
-        .card h3 { margin-bottom: 15px; color: var(--accent); }
+        .card h3 { font-size: 1.4rem; margin-bottom: 20px; color: var(--accent); }
+        .card p { font-size: 0.95rem; color: var(--text-gray); }
 
-        /* 3. Proof Section (B&A) */
-        .proof .ba-box { 
-            display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; 
-            overflow: hidden; border-radius: 15px;
+        /* 3. Proof Section */
+        .proof { background-color: var(--bg-beige); max-width: 100%; }
+        .ba-container { 
+            display: flex; 
+            justify-content: center; 
+            gap: 15px; 
+            margin: 40px auto;
+            max-width: 900px;
         }
-        .ba-box img { width: 45%; border-radius: 10px; }
-        .hygiene { font-size: 0.9rem; font-style: italic; color: var(--accent); margin-top: 20px; }
+        .ba-item { flex: 1; position: relative; border-radius: 15px; overflow: hidden; }
+        .ba-item img { width: 100%; display: block; }
+        .ba-label { position: absolute; bottom: 15px; left: 15px; background: rgba(255,255,255,0.85); padding: 5px 15px; font-size: 0.8rem; border-radius: 20px; font-weight: 600; }
+        
+        .hygiene-text { 
+            font-size: 0.9rem; 
+            color: var(--accent); 
+            border: 1px dashed var(--accent); 
+            display: inline-block; 
+            padding: 12px 25px; 
+            margin-top: 30px; 
+            font-style: italic;
+        }
 
         /* 4. Process Section */
-        .process-list { text-align: left; max-width: 800px; margin: 0 auto; }
-        .process-item { display: flex; align-items: flex-start; margin-bottom: 30px; }
-        .process-num { font-family: 'Nanum+Myeongjo', serif; font-size: 2rem; color: var(--point-beige); margin-right: 25px; min-width: 40px; }
+        .process { background-color: var(--white); max-width: 100%; }
+        .process-wrap { max-width: 800px; margin: 0 auto; text-align: left; }
+        .step { display: flex; margin-bottom: 50px; align-items: flex-start; }
+        .step-num { font-family: 'Nanum+Myeongjo', serif; font-size: 2.5rem; color: var(--point-beige); margin-right: 30px; line-height: 1; min-width: 50px; }
+        .step-content h3 { font-size: 1.3rem; margin-bottom: 12px; color: var(--text-dark); }
+        .step-content p { font-size: 0.95rem; color: var(--text-gray); }
 
-        /* 5. Info Section */
-        .info { border-top: 1px solid var(--point-beige); }
-        .benefit-tag { display: inline-block; padding: 5px 15px; border: 1px solid var(--accent); color: var(--accent); border-radius: 5px; margin: 5px; font-size: 0.9rem; }
+        /* 5. Contact Section */
+        .contact { background-color: var(--bg-beige); max-width: 100%; }
+        .benefit-box { margin: 40px 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        .benefit-item { background: white; padding: 18px 30px; border-radius: 10px; border: 1px solid var(--point-beige); font-size: 0.95rem; box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
+        
+        .info-list { margin: 50px auto; max-width: 600px; text-align: left; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .info-row { display: flex; justify-content: space-between; margin-bottom: 20px; border-bottom: 1px solid #f5f5f5; padding-bottom: 15px; }
+        .info-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .info-row span:first-child { font-weight: 600; color: var(--accent); min-width: 100px; }
+        .info-row span:last-child { color: var(--text-dark); text-align: right; }
+
+        footer { padding: 50px; font-size: 0.85rem; color: #999; background: var(--bg-beige); }
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
+            .hero h1 { font-size: 2.5rem; }
             h2 { font-size: 1.8rem; }
-            .ba-box { flex-direction: column; align-items: center; }
-            .ba-box img { width: 100%; }
+            .ba-container { flex-direction: column; }
+            .step { flex-direction: column; }
+            .step-num { margin-bottom: 15px; }
+            .info-row { flex-direction: column; text-align: left; }
+            .info-row span:last-child { text-align: left; margin-top: 5px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- 1단계: 헤어 섹션 -->
     <header class="hero">
-        <p>PREMIUM BROW STUDIO</p>
+        <span class="section-label">PREMIUM BROW STUDIO</span>
         <h1>뮬샵 (Mule Shop)</h1>
         <p>대전, 본연의 결을 찾아가는 시간</p>
-        <a href="https://pf.kakao.com" class="cta-btn">상담 예약하기</a>
+        <a href="http://pf.kakao.com/_ZvrpG/chat" target="_blank" class="cta-btn">상담 예약하기</a>
     </header>
 
+    <!-- 2단계: 솔루션 섹션 -->
     <section class="solution">
-        <p>DIFFERENCE</p>
+        <span class="section-label">DIFFERENCE</span>
         <h2>안 되는 눈썹은 없습니다</h2>
         <div class="grid">
             <div class="card">
                 <h3>미리 예측하는 디자인</h3>
-                <p>아이패드 시뮬레이션으로 시술 후 모습을 미리 확인하여 불안감을 해소합니다.</p>
+                <p>아이패드 시뮬레이션을 통해 시술 후 모습을 미리 확인하여 디자인 오차와 불안감을 해소합니다.</p>
             </div>
             <div class="card">
                 <h3>독보적 색소 배합</h3>
-                <p>피부 타입과 톤을 정밀 분석하여 뮬샵만의 레시피로 최적의 컬러를 찾아냅니다.</p>
+                <p>개개인의 피부 톤과 타입을 정밀 분석하여 뮬샵만의 레시피로 최적의 컬러와 유지력을 찾아냅니다.</p>
             </div>
             <div class="card">
                 <h3>본연의 미학</h3>
-                <p>기존 눈썹의 흐름을 해치지 않고 장점만 극대화하는 자연스러운 엠보·콤보 기법.</p>
+                <p>기존 눈썹의 흐름과 베이스를 해치지 않고 장점만을 극대화하는 정교한 엠보·콤보 기법을 선보입니다.</p>
             </div>
         </div>
     </section>
 
+    <!-- 3단계: 사회적 증거 섹션 -->
     <section class="proof">
-        <p>BEFORE & AFTER</p>
-        <h2>결과로 증명하는 뮬샵</h2>
-        <div class="ba-box">
-            <img src="https://via.placeholder.com/500x300/e5e0d5/ffffff?text=Before" alt="시술 전">
-            <img src="https://via.placeholder.com/500x300/a68b6a/ffffff?text=After" alt="시술 후">
+        <span class="section-label">PORTFOLIO</span>
+        <h2>원하던 눈썹을 만나는 순간</h2>
+        <div class="ba-container">
+            <div class="ba-item">
+                <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&q=80&w=600" alt="">
+                <div class="ba-label">MENS BROW</div>
+            </div>
+            <div class="ba-item">
+                <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&q=80&w=600" alt="">
+                <div class="ba-label">WOMENS BROW</div>
+            </div>
         </div>
-        <p>"원하던 눈썹을 만나는 순간, 3040 세련된 감각을 완성합니다."</p>
-        <p class="hygiene">뮬샵은 모든 도구 1회용 사용 및 즉각 폐기 원칙을 준수합니다.</p>
+        <p>"3040 세련된 감각부터 부모님을 위한 교정 눈썹까지,<br>모든 케이스에 맞춘 정교한 커버업 솔루션을 제안합니다."</p>
+        <div class="hygiene-text">
+            뮬샵은 모든 시술 도구 1회용 사용 및 즉각 폐기 원칙을 준수하며 철저한 위생 관리를 약속합니다.
+        </div>
     </section>
 
-    <section class="process" style="background-color: white;">
-        <p>PROCESS</p>
+    <!-- 4단계: 전문 프로세스 가이드 -->
+    <section class="process">
+        <span class="section-label">PROCESS</span>
         <h2>정교한 120분의 집중</h2>
-        <div class="process-list">
-            <div class="process-item">
-                <div class="process-num">01</div>
-                <div>
-                    <strong>딥 컨설팅 & 조화로운 디자인</strong>
-                    <p>메이크업 습관과 골격을 분석하여 1:1 맞춤 드로잉을 진행합니다. 인위적 대칭보다 조화를 추구합니다.</p>
+        <div class="process-wrap">
+            <div class="step">
+                <div class="step-num">01</div>
+                <div class="step-content">
+                    <h3>1:1 딥 컨설팅 및 디자인</h3>
+                    <p>메이크업 습관과 얼굴 골격을 면밀히 분석합니다. 인위적인 대칭보다 고객님께 가장 조화로운 밸런스를 설계합니다.</p>
                 </div>
             </div>
-            <div class="process-item">
-                <div class="process-num">02</div>
-                <div>
-                    <strong>정성을 다한 맞춤 시술</strong>
-                    <p>개인별 피부 타입을 고려하여 2시간 동안 여유 있고 정교하게 시술합니다.</p>
+            <div class="step">
+                <div class="step-num">02</div>
+                <div class="step-content">
+                    <h3>정성을 다한 맞춤 시술</h3>
+                    <p>개인별 피부 타입과 기법에 맞춰 약 2시간 동안 여유 있고 정교하게 시술을 진행하여 최상의 결과물을 만듭니다.</p>
                 </div>
             </div>
-            <div class="process-item">
-                <div class="process-num">03</div>
-                <div>
-                    <strong>애프터 케어 가이드</strong>
-                    <p>재생 크림 증정과 함께 카카오톡으로 상세 주의사항을 안내해 드립니다.</p>
+            <div class="step">
+                <div class="step-num">03</div>
+                <div class="step-content">
+                    <h3>애프터 케어 시스템</h3>
+                    <p>시술 후 전용 재생 크림을 챙겨드리며, 잊기 쉬운 주의사항은 카카오톡을 통해 별도로 상세히 안내해 드립니다.</p>
                 </div>
             </div>
-            <div class="process-item">
-                <div class="process-num">04</div>
-                <div>
-                    <strong>책임 리터치</strong>
-                    <p>4~8주 이내, 필요하신 경우 무상 1회 리터치를 통해 완성도를 높입니다.</p>
+            <div class="step">
+                <div class="step-num">04</div>
+                <div class="step-content">
+                    <h3>책임 리터치 제도</h3>
+                    <p>시술 4주 후부터 8주 이내, 필요 시 무상 1회 리터치를 통해 부족한 부분을 보완하고 완성도를 끝까지 책임집니다.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="info">
-        <h2>CONTACT</h2>
-        <p><strong>위치:</strong> 대전 남선공원 인근 (예약 시 상세 위치 안내)</p>
-        <p><strong>영업시간:</strong> 오전 11시 ~ 오후 6시 (문의는 24시간)</p>
-        <p><strong>주차:</strong> 인근 유료 주차장 이용 가능 (위치 및 요금 별도 안내)</p>
+    <!-- 5단계: 전환 유도 섹션 -->
+    <section class="contact">
+        <span class="section-label">RESERVATION</span>
+        <h2>한 분만을 위한 정성스러운 예약</h2>
         
-        <div style="margin: 30px 0;">
-            <span class="benefit-tag">동반 예약 시 각 1만원 할인</span>
-            <span class="benefit-tag">세트 시술 시 5천원 할인</span>
+        <div class="benefit-box">
+            <div class="benefit-item">👫 동반 예약 시 <strong>각 1만원 할인</strong></div>
+            <div class="benefit-item">✨ 세트 시술 시 <strong>5천원 할인</strong></div>
         </div>
 
-        <p style="margin-top: 40px; font-weight: bold;">"한 분 한 분께 맞는 정성스러운 시술로 보답하겠습니다."</p>
-        <a href="https://pf.kakao.com" class="cta-btn" style="margin-top: 20px;">카카오톡으로 예약 문의하기</a>
+        <div class="info-list">
+            <div class="info-row"><span>위치</span><span>대전 남선공원 인근 (예약 시 상세 위치 안내)</span></div>
+            <div class="info-row"><span>주차</span><span>건물 내 불가 / 인근 유료 주차장 위치 및 금액 안내 지원</span></div>
+            <div class="info-row"><span>운영시간</span><span>오전 11:00 - 오후 18:00</span></div>
+            <div class="info-row"><span>상담</span><span>24시간 카카오톡 문의 및 상담 가능</span></div>
+        </div>
+
+        <p style="margin-bottom: 40px; font-weight: 600; font-size: 1.1rem;">
+            "오직 한 분만을 위한 프라이빗한 공간에서<br>최선을 다한 맞춤 시술로 보답하겠습니다."
+        </p>
+        
+        <a href="http://pf.kakao.com/_ZvrpG/chat" target="_blank" class="cta-btn">카카오톡 문의하기</a>
     </section>
 
-    <footer style="padding: 40px; font-size: 0.8rem; color: #999;">
-        © 2026 MULE SHOP. All Rights Reserved.
+    <footer>
+        <p>© 2026 MULE SHOP. All Rights Reserved.</p>
     </footer>
 
 </body>
