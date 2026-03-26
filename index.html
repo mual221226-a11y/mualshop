@@ -4,21 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="대전 눈썹문신전문샵 · 모든 피부타입에 맞는 기법을 다 갖춘 전문 디자이너 한주희 · 엠보 콤보 쉐도우 헤어스트록">
-<title>MUALSHOP 대전 — 눈썹문신전문샵</title>
+<title>뮬샵 대전 — 눈썹문신전문샵</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+KR:wght@300;400;500&family=Noto+Serif+KR:wght@300;400&display=swap" rel="stylesheet">
 <style>
 
   :root {
-    --cream: #FEFCF8;
+    --cream: #FAFAF8;
     --warm-white: #FFFFFF;
-    --gold: #B8895A;
-    --gold-light: #D4AE84;
-    --brown-deep: #3C2A1C;
-    --brown-mid: #6E4E36;
-    --text-muted: #A8917A;
-    --border: rgba(184,137,90,0.16);
-    --border-strong: rgba(184,137,90,0.34);
+    --gold: #6B4226;
+    --gold-light: #8B5E3C;
+    --brown-deep: #1A1008;
+    --brown-mid: #3C2010;
+    --text-muted: #6B5040;
+    --border: rgba(26,16,8,0.12);
+    --border-strong: rgba(26,16,8,0.28);
   }
 
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -28,8 +28,10 @@
   body {
     font-family: 'Noto Sans KR', sans-serif;
     background: var(--cream);
-    color: var(--brown-deep);
+    color: #1A1008;
     overflow-x: hidden;
+    font-size: 15px;
+    line-height: 1.8;
   }
 
 
@@ -45,7 +47,7 @@
     justify-content: space-between;
     padding: 0 5vw;
     height: 72px;
-    background: rgba(255,253,250,0.94);
+    background: rgba(255,255,255,0.96);
     backdrop-filter: blur(14px);
     border-bottom: 0.5px solid var(--border);
     transition: background 0.4s;
@@ -161,7 +163,7 @@
     width: 100%; height: 100%;
     background:
       radial-gradient(ellipse 80% 60% at 60% 45%, rgba(168,132,92,0.3) 0%, transparent 55%),
-      linear-gradient(135deg, #EDE6DA 0%, #D8C0A0 35%, #B8946A 70%, #7A5840 100%);
+      linear-gradient(135deg, #E8E0D4 0%, #C8A880 35%, #8B6340 70%, #3C2010 100%);
     animation: gentle-shift 8s ease-in-out infinite alternate;
   }
 
@@ -1341,7 +1343,7 @@
     position: absolute; top: 50%; transform: translateY(-50%);
     z-index: 10;
     width: 32px; height: 32px;
-    background: rgba(255,253,250,0.9);
+    background: rgba(255,255,255,0.96);
     backdrop-filter: blur(4px);
     border: 0.5px solid rgba(184,148,106,0.3);
     display: flex; align-items: center; justify-content: center;
@@ -1811,8 +1813,7 @@
   .slider-outer {
     position: relative;
     width: 100%;
-    opacity: 0; transform: translateY(20px);
-    transition: opacity 0.9s 0.1s ease, transform 0.9s 0.1s ease;
+    opacity: 1;
   }
   .slider-outer.visible { opacity: 1; transform: translateY(0); }
 
@@ -1831,7 +1832,9 @@
 
   /* ════════ REVIEW CARD ════════ */
   .review-card {
-    flex: 0 0 calc((100% - 40px) / 3);   /* 3열 기준 */
+    flex: 0 0 calc((90vw - 40px) / 3);
+    width: calc((90vw - 40px) / 3);
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     background: var(--warm-white);
@@ -1949,10 +1952,10 @@
 
   /* ════════ RESPONSIVE ════════ */
   @media (max-width: 900px) {
-    .review-card { flex: 0 0 calc((100% - 20px) / 2); }
+    .review-card { flex: 0 0 calc((90vw - 20px) / 2); width: calc((90vw - 20px) / 2); }
   }
   @media (max-width: 560px) {
-    .review-card { flex: 0 0 85%; }
+    .review-card { flex: 0 0 82vw; width: 82vw; }
   }
 
 
@@ -2651,7 +2654,7 @@
     .fp-quote { font-size: clamp(18px, 5vw, 28px); }
 
     /* ── 리뷰 ── */
-    .review-card { flex: 0 0 80%; }
+    .review-card { flex: 0 0 82vw; width: 82vw; }
     .slider-nav { margin-top: 28px; }
 
     /* ── 가격표 ── */
@@ -2713,8 +2716,7 @@
   /* ════════ 단일 가로 슬라이더 ════════ */
   .single-slider-outer {
     width: 100%;
-    opacity: 0; transform: translateY(20px);
-    transition: opacity 0.9s 0.1s ease, transform 0.9s 0.1s ease;
+    opacity: 1;
   }
   .single-slider-outer.visible { opacity: 1; transform: translateY(0); }
 
@@ -2731,10 +2733,12 @@
   }
 
   .single-slide {
-    flex: 0 0 calc((100% - 32px) / 3);
+    flex: 0 0 calc((90vw - 32px) / 3);
+    width: calc((90vw - 32px) / 3);
     aspect-ratio: 3/4;
     overflow: hidden;
     background: #F4EEE6;
+    flex-shrink: 0;
   }
   .single-slide img { width:100%; height:100%; object-fit:cover; display:block; }
 
@@ -2764,10 +2768,10 @@
   .single-dot.active { background: var(--gold); transform: scale(1.35); border-color: var(--gold); }
 
   @media (max-width: 768px) {
-    .single-slide { flex: 0 0 calc((100% - 16px) / 2); }
+    .single-slide { flex: 0 0 calc((90vw - 16px) / 2); width: calc((90vw - 16px) / 2); }
   }
   @media (max-width: 480px) {
-    .single-slide { flex: 0 0 82%; }
+    .single-slide { flex: 0 0 82vw; width: 82vw; }
   }
 
 
@@ -2885,6 +2889,189 @@
   }
   .insta-reserve-btn:hover { opacity: 0.88; transform: translateY(-1px); }
 
+
+  /* ════════ 가독성 강화 ════════ */
+  /* 기본 텍스트 명도 높이기 */
+  .hero-sub { color: rgba(26,16,8,0.75); font-size: 14px; font-weight: 400; }
+  .section-desc { color: var(--brown-mid); font-size: 13.5px; font-weight: 400; }
+  .technique-desc { color: var(--brown-mid); font-size: 13.5px; font-weight: 400; line-height: 2.1; }
+  .stat-label { color: var(--brown-mid); font-weight: 400; letter-spacing: 0.2em; }
+  .stat-desc  { color: var(--brown-deep); font-size: 13px; font-weight: 400; }
+  .trust-desc { color: rgba(255,255,255,0.85); font-size: 12px; font-weight: 400; }
+  .strength-desc { color: var(--brown-mid); font-size: 12.5px; font-weight: 400; }
+  .step-desc { color: var(--brown-mid); font-size: 13px; font-weight: 400; line-height: 1.95; }
+  .step-title { font-size: 15px; font-weight: 500; color: var(--brown-deep); }
+  .faq-q-text { font-size: 14.5px; font-weight: 400; color: var(--brown-deep); }
+  .faq-answer-inner { font-size: 13.5px; font-weight: 400; color: var(--brown-mid); line-height: 2; }
+  .review-excerpt { font-size: 13px; font-weight: 400; color: var(--brown-mid); line-height: 1.9; }
+  .info-value { color: rgba(255,255,255,0.9); font-size: 13.5px; }
+  .philosophy-text { font-size: 15px; line-height: 2; color: var(--brown-deep); }
+  .spec-key { font-size: 10px; font-weight: 500; color: var(--brown-mid); letter-spacing: 0.2em; }
+  .spec-val { font-size: 18px; font-weight: 400; color: var(--brown-deep); }
+  .mens-desc { color: rgba(255,255,255,0.82); font-size: 13.5px; font-weight: 400; }
+  .mens-list li { color: rgba(255,255,255,0.8); font-size: 13px; font-weight: 400; }
+  .statement-text { font-size: clamp(14px,1.8vw,18px); }
+  .retouch-text { font-size: 13px; font-weight: 400; color: var(--brown-mid); }
+  .policy-text { font-size: 12.5px; font-weight: 400; color: var(--brown-mid); }
+  .loc-text { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.72); }
+  .event-item { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.82); }
+  .pkg-desc { font-size: 12.5px; font-weight: 400; color: var(--brown-mid); }
+  .card-technique { font-size: 12.5px; font-weight: 400; color: var(--brown-mid); }
+
+  /* 햄버거 버튼 — PC 숨김, 모바일 표시 */
+  .hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 36px; height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .hamburger-btn span {
+    display: block;
+    width: 22px; height: 1.5px;
+    background: var(--brown-deep);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .hamburger-btn.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .hamburger-btn.open span:nth-child(2) { opacity: 0; }
+  .hamburger-btn.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  /* 모바일 드롭다운 */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 60px; left: 0; right: 0;
+    background: rgba(255,255,255,0.98);
+    backdrop-filter: blur(12px);
+    z-index: 99;
+    border-bottom: 0.5px solid var(--border);
+    flex-direction: column;
+    padding: 8px 0 12px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu-item {
+    display: block;
+    padding: 14px 6vw;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--brown-deep);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    border-bottom: 0.5px solid var(--border);
+    transition: background 0.2s;
+  }
+  .mobile-menu-item:last-child { border-bottom: none; }
+  .mobile-menu-item:hover { background: var(--cream); }
+
+  /* PC에서 nav-links 유지, 예약버튼 숨김 */
+  .nav-reserve { display: none !important; }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none !important; }
+    .hamburger-btn { display: flex; }
+    nav { height: 60px; }
+  }
+  @media (min-width: 769px) {
+    .hamburger-btn { display: none !important; }
+    .mobile-menu { display: none !important; }
+    .nav-links { display: flex !important; }
+  }
+
+
+  /* ════ 가독성 강화 ════ */
+  .section-title { font-weight: 400 !important; color: #1A1008 !important; }
+  .section-desc  { font-size: 14px !important; color: #3C2010 !important; font-weight: 300; }
+  .technique-desc { font-size: 14px !important; color: #3C2010 !important; line-height: 2 !important; }
+  .technique-name { color: #1A1008 !important; }
+  .technique-name-kr { color: #3C2010 !important; font-size: 16px !important; }
+  .technique-label { color: #6B4226 !important; font-size: 11px !important; letter-spacing: 0.28em !important; }
+  .stat-number { color: #1A1008 !important; }
+  .stat-desc   { font-size: 14px !important; color: #3C2010 !important; }
+  .stat-label  { color: #6B4226 !important; font-size: 11px !important; }
+  .trust-statement .statement-text { font-size: 16px !important; color: #3C2010 !important; }
+  .faq-q-text  { font-size: 15px !important; color: #1A1008 !important; font-weight: 400 !important; }
+  .faq-answer-inner { font-size: 14px !important; color: #3C2010 !important; line-height: 1.9 !important; }
+  .step-title  { font-size: 15px !important; color: #1A1008 !important; font-weight: 500 !important; }
+  .step-desc   { font-size: 13.5px !important; color: #3C2010 !important; line-height: 1.9 !important; }
+  .review-excerpt { font-size: 13.5px !important; color: #3C2010 !important; line-height: 1.9 !important; }
+  .hero-headline { color: #1A1008 !important; }
+  .hero-sub    { font-size: 15px !important; color: #3C2010 !important; }
+  .strength-name { font-size: 14px !important; color: #1A1008 !important; font-weight: 500 !important; }
+  .strength-desc { font-size: 13px !important; color: #4A3020 !important; line-height: 1.85 !important; }
+  .price-name  { font-size: 16px !important; color: #1A1008 !important; }
+  .info-value  { font-size: 14px !important; }
+  .nav-links a { font-size: 13px !important; color: #1A1008 !important; letter-spacing: 0.1em !important; }
+  .eyebrow-text, .eyebrow-line, .section-eyebrow .eyebrow-text { color: #6B4226 !important; }
+  .text-muted, [class*="muted"] { color: #6B5040 !important; }
+  .event-item  { font-size: 13.5px !important; color: rgba(255,255,255,0.85) !important; }
+  .event-title { font-size: 18px !important; }
+  .retouch-text { font-size: 13.5px !important; color: #3C2010 !important; }
+  .policy-text  { font-size: 12.5px !important; color: #3C2010 !important; }
+  .philosophy-text { font-size: 15px !important; color: #1A1008 !important; line-height: 2 !important; }
+
+
+  /* ════ 햄버거/모바일메뉴 보완 ════ */
+  .hamburger-btn { display: none; }
+  .nav-reserve   { display: none; }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none !important; }
+    .hamburger-btn {
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 36px; height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger-btn span {
+      display: block;
+      width: 22px; height: 1.5px;
+      background: #1A1008;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .hamburger-btn.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger-btn.open span:nth-child(2) { opacity: 0; }
+    .hamburger-btn.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 60px; left: 0; right: 0;
+    background: #FFFFFF;
+    border-bottom: 0.5px solid rgba(26,16,8,0.12);
+    z-index: 99;
+    flex-direction: column;
+    padding: 8px 0;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu-item {
+    padding: 16px 6vw;
+    font-size: 15px; font-weight: 400;
+    color: #1A1008;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    border-bottom: 0.5px solid rgba(26,16,8,0.06);
+    transition: background 0.2s;
+  }
+  .mobile-menu-item:last-child { border-bottom: none; }
+  .mobile-menu-item:hover { background: #F8F6F2; }
+
+
+  /* 슬라이더 카드 너비 보정 */
+  .slider-track { align-items: stretch; }
+  .single-slider-track { align-items: stretch; }
+
 </style>
 </head>
 <body>
@@ -2895,14 +3082,23 @@
     MUALSHOP
   </a>
   <ul class="nav-links">
-    <li><a href="#technique">기법설명</a></li>
     <li><a href="#process">작업과정</a></li>
     <li><a href="#gallery">시술사진</a></li>
     <li><a href="#review">후기</a></li>
     <li><a href="#location">오시는길</a></li>
   </ul>
-  <a href="#reserve" class="nav-reserve">예 약</a>
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="메뉴">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- 모바일 드롭다운 메뉴 -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#process" class="mobile-menu-item" onclick="closeMobileMenu()">작업과정</a>
+  <a href="#gallery" class="mobile-menu-item" onclick="closeMobileMenu()">시술사진</a>
+  <a href="#review" class="mobile-menu-item" onclick="closeMobileMenu()">후기</a>
+  <a href="#location" class="mobile-menu-item" onclick="closeMobileMenu()">오시는길</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -3233,7 +3429,7 @@
 
 
 
-<section class="gallery-section">
+<section class="gallery-section" id="gallery">
 
   <!-- 헤더 -->
   <div class="section-header">
@@ -3288,7 +3484,7 @@
 
 </section>
 
-<section class="process-section">
+<section class="process-section" id="process">
 
   <div class="section-header" style="text-align:center; margin-bottom:64px; padding:0 5vw;">
     <div class="section-eyebrow" style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:18px;">
@@ -3392,7 +3588,7 @@
 
 </section>
 
-<section class="review-section">
+<section class="review-section" id="review">
 
   <!-- 헤더 -->
   <div class="section-header">
@@ -3648,7 +3844,7 @@
 </section>
 
 <!-- ══════════ RESERVE ══════════ -->
-<section class="reserve-section">
+<section class="reserve-section" id="location">
   <div class="reserve-inner">
 
     <!-- 예약 안내 -->
@@ -3854,130 +4050,124 @@
 })();
 
 (function(){
-  /* ── 단일 슬라이더 ── */
-  const track = document.getElementById('singleTrack');
-  const dotsWrap = document.getElementById('singleDots');
-  const prevBtn = document.getElementById('singlePrev');
-  const nextBtn = document.getElementById('singleNext');
+  /* ── 갤러리 슬라이더 ── */
+  var track    = document.getElementById('singleTrack');
+  var dotsWrap = document.getElementById('singleDots');
+  var prevBtn  = document.getElementById('singlePrev');
+  var nextBtn  = document.getElementById('singleNext');
   if (!track) return;
 
-  const slides = track.querySelectorAll('.single-slide');
-  const total = slides.length;
-  let cur = 0;
+  var slides = track.querySelectorAll('.single-slide');
+  var total  = slides.length;
+  var cur    = 0;
+  var paused = false;
+  var timer  = null;
+  var gap    = 16;
 
-  function getVisible() {
-    if (window.innerWidth <= 480) return 1;
-    if (window.innerWidth <= 768) return 2;
-    return 3;
+  function vis() {
+    var w = window.innerWidth;
+    return w <= 480 ? 1 : w <= 768 ? 2 : 3;
+  }
+  function maxI() { return Math.max(0, total - vis()); }
+
+  function slideW() {
+    // 실제 렌더된 너비 사용
+    return slides[0].offsetWidth || 300;
   }
 
-  function maxIdx() { return Math.max(0, total - getVisible()); }
+  function moveTo(n) {
+    var max = maxI();
+    cur = ((n % (max + 1)) + (max + 1)) % (max + 1);
+    track.style.transform = 'translateX(-' + (cur * (slideW() + gap)) + 'px)';
+    if (dotsWrap) dotsWrap.querySelectorAll('.single-dot').forEach(function(d, i){ d.classList.toggle('active', i===cur); });
+  }
 
   function buildDots() {
+    if (!dotsWrap) return;
     dotsWrap.innerHTML = '';
-    const count = maxIdx() + 1;
-    for (let i = 0; i < count; i++) {
-      const d = document.createElement('span');
-      d.className = 'single-dot' + (i === cur ? ' active' : '');
-      d.addEventListener('click', () => go(i));
+    var count = maxI() + 1;
+    for (var i = 0; i < count; i++) {
+      var d = document.createElement('span');
+      d.className = 'single-dot' + (i===cur ? ' active' : '');
+      (function(idx){ d.addEventListener('click', function(){ paused=true; clearInterval(timer); moveTo(idx); }); })(i);
       dotsWrap.appendChild(d);
     }
   }
 
-  function go(n) {
-    cur = Math.min(Math.max(n, 0), maxIdx());
-    const slideW = slides[0].getBoundingClientRect().width;
-    track.style.transform = 'translateX(-' + (cur * (slideW + 16)) + 'px)';
-    dotsWrap.querySelectorAll('.single-dot').forEach((d, i) => d.classList.toggle('active', i === cur));
-  }
+  function next() { if (!paused) moveTo(cur + 1); }
+  function start() { clearInterval(timer); timer = setInterval(next, 3000); }
+  function stop()  { paused = true; clearInterval(timer); }
 
-  prevBtn.addEventListener('click', () => go(cur - 1));
-  nextBtn.addEventListener('click', () => go(cur + 1));
+  if (prevBtn) prevBtn.addEventListener('click', function(){ stop(); moveTo(cur-1); });
+  if (nextBtn) nextBtn.addEventListener('click', function(){ stop(); moveTo(cur+1); });
 
-  let tx = 0;
-  track.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
-  track.addEventListener('touchend', e => {
-    const diff = tx - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) go(diff > 0 ? cur + 1 : cur - 1);
-  });
+  track.addEventListener('touchstart', function(){ stop(); }, {passive:true});
+  track.addEventListener('mouseenter', function(){ stop(); });
+  window.addEventListener('resize', function(){ buildDots(); moveTo(cur); });
 
-  window.addEventListener('resize', () => { buildDots(); go(Math.min(cur, maxIdx())); });
   buildDots();
-
-  const outer = document.getElementById('singleSliderOuter');
-  if (outer) {
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { outer.classList.add('visible'); obs.unobserve(outer); }});
-    }, { threshold: 0.1 });
-    obs.observe(outer);
-  }
+  start();
 })();
 
 
 
 /* ── review-section.html ── */
 (function(){
-// ── 스크롤 reveal ──
-  const header = document.querySelector('.section-header');
-  const outer  = document.querySelector('.slider-outer');
-  const revObs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target); }});
-  }, { threshold: 0.1 });
-  [header, outer].forEach(el => revObs.observe(el));
+  var track    = document.getElementById('sliderTrack');
+  var dotsWrap = document.getElementById('navDots');
+  var prevBtn  = document.getElementById('prevBtn');
+  var nextBtn  = document.getElementById('nextBtn');
+  if (!track) return;
 
-  // ── 슬라이더 ──
-  const track    = document.getElementById('sliderTrack');
-  const cards    = track.querySelectorAll('.review-card');
-  const dotsWrap = document.getElementById('navDots');
-  const prevBtn  = document.getElementById('prevBtn');
-  const nextBtn  = document.getElementById('nextBtn');
+  var cards  = track.querySelectorAll('.review-card');
+  var total  = cards.length;
+  var cur    = 0;
+  var paused = false;
+  var timer  = null;
+  var gap    = 20;
 
-  // 화면 폭에 따라 한 번에 보여줄 카드 수
-  function getVisible() {
-    if (window.innerWidth <= 560) return 1;
-    if (window.innerWidth <= 900) return 2;
-    return 3;
+  function vis() {
+    var w = window.innerWidth;
+    return w <= 560 ? 1 : w <= 900 ? 2 : 3;
+  }
+  function maxI() { return Math.max(0, total - vis()); }
+
+  function cardW() {
+    return cards[0].offsetWidth || 300;
   }
 
-  let cur = 0;
-  const total = cards.length;
+  function moveTo(n) {
+    var max = maxI();
+    cur = ((n % (max + 1)) + (max + 1)) % (max + 1);
+    track.style.transform = 'translateX(-' + (cur * (cardW() + gap)) + 'px)';
+    if (dotsWrap) dotsWrap.querySelectorAll('.nav-dot').forEach(function(d, i){ d.classList.toggle('active', i===cur); });
+  }
 
-  function maxIndex() { return Math.max(0, total - getVisible()); }
-
-  // 도트 생성
   function buildDots() {
+    if (!dotsWrap) return;
     dotsWrap.innerHTML = '';
-    const count = maxIndex() + 1;
-    for (let i = 0; i < count; i++) {
-      const d = document.createElement('span');
-      d.className = 'nav-dot' + (i === cur ? ' active' : '');
-      d.addEventListener('click', () => go(i));
+    var count = maxI() + 1;
+    for (var i = 0; i < count; i++) {
+      var d = document.createElement('span');
+      d.className = 'nav-dot' + (i===cur ? ' active' : '');
+      (function(idx){ d.addEventListener('click', function(){ paused=true; clearInterval(timer); moveTo(idx); }); })(i);
       dotsWrap.appendChild(d);
     }
   }
 
-  function go(n) {
-    cur = Math.min(Math.max(n, 0), maxIndex());
-    const cardW = cards[0].getBoundingClientRect().width;
-    const gap   = 20;
-    track.style.transform = `translateX(-${cur * (cardW + gap)}px)`;
-    dotsWrap.querySelectorAll('.nav-dot').forEach((d, i) => d.classList.toggle('active', i === cur));
-  }
+  function next() { if (!paused) moveTo(cur + 1); }
+  function start() { clearInterval(timer); timer = setInterval(next, 3000); }
+  function stop()  { paused = true; clearInterval(timer); }
 
-  prevBtn.addEventListener('click', () => go(cur - 1));
-  nextBtn.addEventListener('click', () => go(cur + 1));
+  if (prevBtn) prevBtn.addEventListener('click', function(){ stop(); moveTo(cur-1); });
+  if (nextBtn) nextBtn.addEventListener('click', function(){ stop(); moveTo(cur+1); });
 
-  // 터치 스와이프
-  let touchX = 0;
-  track.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
-  track.addEventListener('touchend',   e => {
-    const diff = touchX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) go(diff > 0 ? cur + 1 : cur - 1);
-  });
-
-  window.addEventListener('resize', () => { buildDots(); go(Math.min(cur, maxIndex())); });
+  track.addEventListener('touchstart', function(){ stop(); }, {passive:true});
+  track.addEventListener('mouseenter', function(){ stop(); });
+  window.addEventListener('resize', function(){ buildDots(); moveTo(cur); });
 
   buildDots();
+  start();
 })();
 
 
@@ -4022,6 +4212,38 @@
   }, { threshold: 0.15 });
   steps.forEach(el => obs.observe(el));
 })();
+
+/* ── 햄버거 메뉴 ── */
+(function(){
+  const btn  = document.getElementById('hamburgerBtn');
+  const menu = document.getElementById('mobileMenu');
+  if (!btn || !menu) return;
+
+  window.closeMobileMenu = function() {
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+  };
+
+  btn.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+  });
+
+  // 메뉴 외부 클릭 시 닫기
+  document.addEventListener('click', e => {
+    if (!btn.contains(e.target) && !menu.contains(e.target)) {
+      closeMobileMenu();
+    }
+  });
+})();
+
+function closeMobileMenu() {
+  const btn  = document.getElementById('hamburgerBtn');
+  const menu = document.getElementById('mobileMenu');
+  if (btn)  btn.classList.remove('open');
+  if (menu) menu.classList.remove('open');
+}
+
 </script>
 </body>
 </html>
